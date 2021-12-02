@@ -9,8 +9,9 @@ class FileReaderTest {
 	@Test
 	void findSmallestTemperatureSpreadTest() {
 	FileReader fr = new FileReader();
-		System.out.println(fr.findSmallestTemperatureSpread("src/main/resources/weather.dat"));
+//	System.out.println(fr.findSmallestTemperatureSpread("src/main/resources/weather.dat"));
 
+	assertEquals(14, fr.findSmallestTemperatureSpread("src/main/resources/weather.dat"));
 
 	}
 }
