@@ -7,6 +7,47 @@ import java.util.List;
 
 public class FileReader {
 
+	public String findSmallestDifference(String fileName) {
+		String teamWithSmallestDifference = null;
+		List<String> fileData = null;
+
+		try {
+			fileData = Files.readAllLines(Paths.get(fileName));
+		} catch (IOException ioe) {
+			throw new IllegalStateException("Can not read file.", ioe);
+		}
+
+		int minSpread = 1000;
+
+		for(int i = 1; i < fileData.size(); i++) {
+			try {
+				String currentLine = fileData.get(i);
+				String teamNameString = currentLine.substring(6,23).trim();
+	//			int day = Integer.parseInt(dayString);
+
+				String goalsFor = currentLine.substring(43,45).trim();
+				int max = Integer.parseInt(goalsFor);
+
+				String goalsAgainst = currentLine.substring(50,52).trim();
+				int min = Integer.parseInt(goalsAgainst);
+
+				int diff = max - min;
+
+				if(diff < minSpread) {
+					minSpread = diff;
+					teamWithSmallestDifference = teamNameString;
+				}
+			} catch (NumberFormatException err) {
+				continue;
+			}
+		}
+
+
+
+		return teamWithSmallestDifference;
+
+	}
+
 	public int findSmallestTemperatureSpread(String fileNameString){
 //		fileNameString = "src/main/resources/notexisting.txt";
 		int dayWithSmallestTempSpread = 0;

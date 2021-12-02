@@ -7,12 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileReaderTest {
 
 	@Test
+	void findSmallestDifference() {
+		FileReader fr = new FileReader();
+
+		assertEquals("Leicester", fr.findSmallestDifference("src/main/resources/football.dat"));
+	}
+
+	@Test
 	void findSmallestTemperatureSpreadTest() {
 	FileReader fr = new FileReader();
-//	System.out.println(fr.findSmallestTemperatureSpread("src/main/resources/weather.dat"));
 
 	assertEquals(14, fr.findSmallestTemperatureSpread("src/main/resources/weather.dat"));
-
 	}
 
 	@Test
