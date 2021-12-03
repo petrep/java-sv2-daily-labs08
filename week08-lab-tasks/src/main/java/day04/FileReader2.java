@@ -9,6 +9,9 @@ import java.util.List;
 
 public class FileReader2 {
 
+//Todo: note that this class should not be used, we created the solution
+//      in the day05 folder.
+
 	public String findSmallestDifference(String fileName) {
 		List<String> lines = readLines(fileName);
 		lines = filterLines(lines, 0, 18);
@@ -16,7 +19,7 @@ public class FileReader2 {
 		int minDifference = 1000;
 
 
-
+		return fileName;
 	}
 
 	private List<String> readLines(String name) {
