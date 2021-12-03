@@ -49,7 +49,6 @@ public class FileReader {
 	}
 
 	public int findSmallestTemperatureSpread(String fileNameString){
-//		fileNameString = "src/main/resources/notexisting.txt";
 		int dayWithSmallestTempSpread = 0;
 		List<String> fileData = null;
 
