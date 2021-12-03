@@ -10,7 +10,7 @@ class FileReaderTest {
 	void findSmallestDifference() {
 		FileReader fr = new FileReader();
 
-		assertEquals("Leicester", fr.findSmallestDifference("src/main/resources/football.dat"));
+		assertEquals("Aston_Villa", fr.findSmallestDifference("src/main/resources/football.dat"));
 	}
 
 	@Test

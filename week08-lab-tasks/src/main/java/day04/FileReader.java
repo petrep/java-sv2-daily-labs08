@@ -31,7 +31,7 @@ public class FileReader {
 				String goalsAgainst = currentLine.substring(50,52).trim();
 				int min = Integer.parseInt(goalsAgainst);
 
-				int diff = max - min;
+				int diff = Math.abs(max - min);
 
 				if(diff < minSpread) {
 					minSpread = diff;
